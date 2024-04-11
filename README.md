@@ -1,4 +1,4 @@
-# StatisticValues
+# StatisticsValues
 
 The goal of this project is to build a simple and open-source software that returns all statistics values given a dinamic set of numbers.
 
