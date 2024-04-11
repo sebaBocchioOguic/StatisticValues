@@ -42,6 +42,17 @@ namespace ProyectoEstadistico
 
             // Clear the input TextField of new number
             txtAddNumber.Text = "";
+            
+            // Set the input focus again in the AddNumber TextField, to continue the numbers input
+            txtAddNumber.Focus();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            /* This Button clears the TextFields */
+
+            txtAddNumber.Text = "";
+            txtOriginalValues.Text = "";
         }
     }
 }

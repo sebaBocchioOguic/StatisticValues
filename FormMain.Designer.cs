@@ -34,6 +34,7 @@
             this.lblAddNumber = new System.Windows.Forms.Label();
             this.txtAddNumber = new System.Windows.Forms.TextBox();
             this.btnAddNumber = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOriginalValues
@@ -69,7 +70,7 @@
             // lblAddNumber
             // 
             this.lblAddNumber.AutoSize = true;
-            this.lblAddNumber.Location = new System.Drawing.Point(78, 68);
+            this.lblAddNumber.Location = new System.Drawing.Point(78, 74);
             this.lblAddNumber.Name = "lblAddNumber";
             this.lblAddNumber.Size = new System.Drawing.Size(83, 16);
             this.lblAddNumber.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // txtAddNumber
             // 
-            this.txtAddNumber.Location = new System.Drawing.Point(206, 68);
+            this.txtAddNumber.Location = new System.Drawing.Point(205, 71);
             this.txtAddNumber.Name = "txtAddNumber";
             this.txtAddNumber.Size = new System.Drawing.Size(100, 22);
             this.txtAddNumber.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             // btnAddNumber
             // 
-            this.btnAddNumber.Location = new System.Drawing.Point(330, 66);
+            this.btnAddNumber.Location = new System.Drawing.Point(334, 71);
             this.btnAddNumber.Name = "btnAddNumber";
             this.btnAddNumber.Size = new System.Drawing.Size(75, 23);
             this.btnAddNumber.TabIndex = 5;
@@ -93,11 +94,22 @@
             this.btnAddNumber.UseVisualStyleBackColor = true;
             this.btnAddNumber.Click += new System.EventHandler(this.btnAddNumber_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(460, 74);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 637);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddNumber);
             this.Controls.Add(this.txtAddNumber);
             this.Controls.Add(this.lblAddNumber);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.Label lblAddNumber;
         private System.Windows.Forms.TextBox txtAddNumber;
         private System.Windows.Forms.Button btnAddNumber;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
