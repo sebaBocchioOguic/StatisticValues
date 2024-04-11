@@ -48,9 +48,10 @@
             // lblOriginalValues
             // 
             this.lblOriginalValues.AutoSize = true;
-            this.lblOriginalValues.Location = new System.Drawing.Point(75, 37);
+            this.lblOriginalValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOriginalValues.Location = new System.Drawing.Point(78, 9);
             this.lblOriginalValues.Name = "lblOriginalValues";
-            this.lblOriginalValues.Size = new System.Drawing.Size(98, 16);
+            this.lblOriginalValues.Size = new System.Drawing.Size(145, 25);
             this.lblOriginalValues.TabIndex = 1;
             this.lblOriginalValues.Text = "Original Values";
             this.lblOriginalValues.Click += new System.EventHandler(this.label1_Click);
@@ -58,7 +59,7 @@
             // lblOriginalValuesDesc
             // 
             this.lblOriginalValuesDesc.AutoSize = true;
-            this.lblOriginalValuesDesc.Location = new System.Drawing.Point(180, 37);
+            this.lblOriginalValuesDesc.Location = new System.Drawing.Point(78, 47);
             this.lblOriginalValuesDesc.Name = "lblOriginalValuesDesc";
             this.lblOriginalValuesDesc.Size = new System.Drawing.Size(504, 16);
             this.lblOriginalValuesDesc.TabIndex = 2;
