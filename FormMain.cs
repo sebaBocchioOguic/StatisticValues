@@ -27,10 +27,14 @@ namespace ProyectoEstadistico
 
         }
 
+
+        /// <summary>
+        /// This function adds the new number in the TextField to the main group of numbers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddNumber_Click(object sender, EventArgs e)
         {
-            /* This function adds the new number in the TextField to the main group of numbers */
-
             // It adds a separator only if it is not the first number
             if(txtOriginalValues.Text != "")
             {
@@ -47,10 +51,13 @@ namespace ProyectoEstadistico
             txtAddNumber.Focus();
         }
 
+        /// <summary>
+        /// This clears the TextFields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClear_Click(object sender, EventArgs e)
         {
-            /* This Button clears the TextFields */
-
             txtAddNumber.Text = "";
             txtOriginalValues.Text = "";
         }
