@@ -25,19 +25,20 @@ namespace StatisticValuesConsoleWin
             // Initialize Byte Variable for Menu Index
             byte menuOption = 1;
 
-            while(menuOption >= 1 && menuOption <= 3)
+            do
             {
                 // Menu Description in Console
                 Console.WriteLine("\nMENU");
                 Console.WriteLine("1 - Add a new number");
                 Console.WriteLine("2 - View the complete numbers set");
-                Console.WriteLine("3 - Exit");
+                Console.WriteLine("3 - Randomize numbers");
+                Console.WriteLine("9 - Exit");
                 Console.Write("---> ");
 
 
                 try
                 {
-                    
+
                     // Input Menu Option
                     menuOption = byte.Parse(Console.ReadLine());
 
@@ -45,18 +46,23 @@ namespace StatisticValuesConsoleWin
                     {
                         case 1:
                             // Add a new value to the List
-                            addNumber(valuesList);
+                            addNumber();
                             break;
 
                         case 2:
                             // Show the content of the List
-                            showNumbers(valuesList);
-                            continue;
+                            showNumbers();
+                            break;
 
                         case 3:
-                            // Exit the program
+                            // Randomize numbers to add to the List
+                            randomizeNumbers();
                             break;
-                        
+
+                        case 9:
+                            // Exit the program
+                            throw new Exception("Ending program");
+
                         default:
                             // Invalid options generates an Exception
                             throw new Exception("Invalid Option");
@@ -73,16 +79,16 @@ namespace StatisticValuesConsoleWin
 
                 }
 
-                
-            }
-            
+
+            } while (menuOption >= 1 && menuOption <= 9);
+
+
         }
 
         /// <summary>
         /// Add a new number to the List
         /// </summary>
-        /// <param name="valuesList">Complete List of values by reference</param>
-        static void addNumber(List<int> valuesList)
+        static void addNumber()
         {
             Console.Write("\nInsert the new value: -> ");
             int newValue = Convert.ToInt32(Console.ReadLine());
@@ -93,8 +99,7 @@ namespace StatisticValuesConsoleWin
         /// <summary>
         /// Show the content of the List
         /// </summary>
-        /// <param name="valuesList">Complete List of values by reference</param>
-        static void showNumbers(List<int> valuesList)
+        static void showNumbers()
         {
             Console.Write("\nNumbers List: ");
             foreach (int number in valuesList)
@@ -103,5 +108,26 @@ namespace StatisticValuesConsoleWin
             }
             Console.WriteLine("");
         }
+
+
+        /// <summary>
+        /// Randomize Numbers to add to the List
+        /// </summary>
+        static void randomizeNumbers()
+        {
+            // Initialize Random Object
+            Random rand = new Random();
+
+            // Insert the quantity of random values to add
+            Console.Write("\nInsert the quantity of random values to add: -> ");
+            int qRand = Convert.ToInt32(Console.ReadLine());
+
+            // For loop to add the random values into the List
+            for (int i = 0; i < qRand; i++)
+            {
+                valuesList.Add(rand.Next(0,500));
+            }
+        }
+    
     }
 }
