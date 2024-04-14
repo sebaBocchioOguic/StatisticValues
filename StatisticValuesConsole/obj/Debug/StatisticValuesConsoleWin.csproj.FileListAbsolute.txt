@@ -1,0 +1,8 @@
+D:\DevProjects\StatisticValues\StatisticValuesConsole\bin\Debug\StatisticValuesConsoleWin.exe.config
+D:\DevProjects\StatisticValues\StatisticValuesConsole\bin\Debug\StatisticValuesConsoleWin.exe
+D:\DevProjects\StatisticValues\StatisticValuesConsole\bin\Debug\StatisticValuesConsoleWin.pdb
+D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.csproj.AssemblyReference.cache
+D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.csproj.SuggestedBindingRedirects.cache
+D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.csproj.CoreCompileInputs.cache
+D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.exe
+D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.pdb

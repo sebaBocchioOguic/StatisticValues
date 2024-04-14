@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c1fc1cbc-c344-4f63-86d1-6f71142fa4f5": {
+      "ProjectGuid": "c1fc1cbc-c344-4f63-86d1-6f71142fa4f5",
+      "DisplayName": "ProyectoEstadistico",
+      "ColorIndex": 0
+    },
+    "0de02f09-f2b2-4511-a101-6f1824895d6c": {
+      "ProjectGuid": "0de02f09-f2b2-4511-a101-6f1824895d6c",
+      "DisplayName": "StatisticValuesConsole",
+      "ColorIndex": 1
+    },
+    "19f9a4aa-b92f-4d62-8156-7c5af80322ef": {
+      "ProjectGuid": "19f9a4aa-b92f-4d62-8156-7c5af80322ef",
+      "DisplayName": "StatisticValuesConsoleWin",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
