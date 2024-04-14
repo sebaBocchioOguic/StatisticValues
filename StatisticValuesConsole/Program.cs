@@ -9,6 +9,10 @@ namespace StatisticValuesConsoleWin
     internal class Program
     {
 
+        // Initialize List of Int Values (Global)
+        static List<int> valuesList = new List<int>();
+
+
         /// <summary>
         /// Original Console Code for the core of the solution
         /// </summary>
@@ -16,8 +20,7 @@ namespace StatisticValuesConsoleWin
         static void Main(string[] args)
         {
 
-            // Initialize List of Int Values
-            List<int> valuesList = new List<int>();
+
 
             // Initialize Byte Variable for Menu Index
             byte menuOption = 1;
@@ -42,12 +45,12 @@ namespace StatisticValuesConsoleWin
                     {
                         case 1:
                             // Add a new value to the List
-                            addNumber(ref valuesList);
+                            addNumber(valuesList);
                             break;
 
                         case 2:
                             // Show the content of the List
-                            showNumbers(ref valuesList);
+                            showNumbers(valuesList);
                             continue;
 
                         case 3:
@@ -79,7 +82,7 @@ namespace StatisticValuesConsoleWin
         /// Add a new number to the List
         /// </summary>
         /// <param name="valuesList">Complete List of values by reference</param>
-        static void addNumber(ref List<int> valuesList)
+        static void addNumber(List<int> valuesList)
         {
             Console.Write("\nInsert the new value: -> ");
             int newValue = Convert.ToInt32(Console.ReadLine());
@@ -91,7 +94,7 @@ namespace StatisticValuesConsoleWin
         /// Show the content of the List
         /// </summary>
         /// <param name="valuesList">Complete List of values by reference</param>
-        static void showNumbers(ref List<int> valuesList)
+        static void showNumbers(List<int> valuesList)
         {
             Console.Write("\nNumbers List: ");
             foreach (int number in valuesList)
