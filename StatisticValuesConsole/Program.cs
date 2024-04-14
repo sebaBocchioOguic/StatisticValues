@@ -25,7 +25,7 @@ namespace StatisticValuesConsoleWin
             // Initialize Byte Variable for Menu Index
             byte menuOption = 1;
 
-            while(menuOption == 1 || menuOption == 2)
+            while(menuOption >= 1 && menuOption <= 3)
             {
                 // Menu Description in Console
                 Console.WriteLine("\nMENU");
