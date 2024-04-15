@@ -32,6 +32,7 @@ namespace StatisticValuesConsoleWin
                 Console.WriteLine("1 - Add a new number");
                 Console.WriteLine("2 - View the complete numbers set");
                 Console.WriteLine("3 - Randomize numbers");
+                Console.WriteLine("4 - Clear List");
                 Console.WriteLine("9 - Exit");
                 Console.Write("---> ");
 
@@ -59,6 +60,11 @@ namespace StatisticValuesConsoleWin
                             randomizeNumbers();
                             break;
 
+                        case 4:
+                            // Clear the List
+                            clearList();
+                            break;
+
                         case 9:
                             // Exit the program
                             throw new Exception("Ending program");
@@ -73,7 +79,7 @@ namespace StatisticValuesConsoleWin
                 {
 
                     // Shows the error message and finishes the program
-                    Console.WriteLine(e.Message + "\nPress any key to exit program");
+                    Console.WriteLine("\n" + e.Message + "\nPress any key to exit program");
                     Console.ReadKey();
                     break;
 
@@ -93,7 +99,7 @@ namespace StatisticValuesConsoleWin
             Console.Write("\nInsert the new value: -> ");
             int newValue = Convert.ToInt32(Console.ReadLine());
             valuesList.Add(newValue);
-            Console.WriteLine($"New value {newValue} added.\n");
+            Console.WriteLine($"New value {newValue} added\n");
         }
 
         /// <summary>
@@ -101,12 +107,20 @@ namespace StatisticValuesConsoleWin
         /// </summary>
         static void showNumbers()
         {
-            Console.Write("\nNumbers List: ");
-            foreach (int number in valuesList)
+            if (valuesList.Count >= 1)
             {
-                Console.Write(number + " ");
+                Console.Write("\nNumbers List: ");
+                foreach (int number in valuesList)
+                {
+                    Console.Write(number + " ");
+                }
+                Console.WriteLine("\n");
             }
-            Console.WriteLine("");
+            else
+            {
+                Console.WriteLine("\nThe List is empty\n");
+            }
+
         }
 
 
@@ -127,6 +141,18 @@ namespace StatisticValuesConsoleWin
             {
                 valuesList.Add(rand.Next(0,500));
             }
+
+            // Shows the upgraded List
+            showNumbers();
+        }
+
+        /// <summary>
+        /// Clear the List of values
+        /// </summary>
+        static void clearList()
+        {
+            valuesList.Clear();
+            Console.WriteLine("\nThe List is empty\n");
         }
     
     }
