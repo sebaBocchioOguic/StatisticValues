@@ -35,7 +35,9 @@ namespace StatisticValuesConsoleWin
                 Console.WriteLine("4 - Clear List");
                 Console.WriteLine("5 - Order List Ascending");
                 Console.WriteLine("6 - Order List Descending");
-                Console.WriteLine("7 - Remove a number");
+                Console.WriteLine("7 - Remove a number Once");
+                Console.WriteLine("8 - Remove a number All ocurrencies");
+                Console.WriteLine("9 - Finds a number in the List");
                 Console.WriteLine("99 - Exit");
                 Console.Write("---> ");
 
@@ -79,8 +81,18 @@ namespace StatisticValuesConsoleWin
                             break;
 
                         case 7:
-                            // Remove a number
-                            removeNumber();
+                            // Remove a number one time
+                            removeNumberOneTime();
+                            break;
+
+                        case 8:
+                            // Remove a number one time
+                            removeNumberAll();
+                            break;
+
+                        case 9:
+                            // Find a number in the List
+                            findNumber();
                             break;
 
                         case 99:
@@ -194,19 +206,15 @@ namespace StatisticValuesConsoleWin
         }
 
         /// <summary>
-        /// This function removes a number from the List
+        /// This function removes a number from the List, only one ocurrency of the number
         /// </summary>
-        static void removeNumber()
+        static void removeNumberOneTime()
         {
             
             // Asks for the number to be removed
             Console.Write("\nWrite the number to be removed from List: -> ");
             int removeNbr = Convert.ToInt32(Console.ReadLine());
 
-            // Several ocurrencies of the number???
-
-            // NOTE: the instruction list.Remove removes only one ocurrency of the number
-            // For removing all the ocurrencies, should use RemoveAll
             if (valuesList.Remove(removeNbr))
             {
                 Console.WriteLine("\nThe element {0} was removed\n", removeNbr);
@@ -219,6 +227,68 @@ namespace StatisticValuesConsoleWin
             showNumbers();
 
         }
-    
+
+
+
+
+        /// <summary>
+        /// This function removes a number from the List, only one ocurrency of the number
+        /// </summary>
+        static void removeNumberAll()
+        {
+
+            // Asks for the number to be removed
+            Console.Write("\nWrite the number to be removed from List: -> ");
+            int removeNbr = Convert.ToInt32(Console.ReadLine());
+
+            // Removes the number in all the ocurrencies and returns an integer number of removed positions
+            int auxRemove = valuesList.RemoveAll(x => x == removeNbr);
+            
+            Console.WriteLine("\nThe element {0} was removed in {1} ocurrencies\n", removeNbr, auxRemove);
+            
+            showNumbers();
+
+        }
+
+
+
+
+        /// <summary>
+        /// Finds the number of ocurrencies of a number in the List
+        /// Overload 1 - Without parameters
+        /// </summary>
+        /// <returns>The number of ocurrencies in the List</returns>
+        static int findNumber()
+        {
+
+            // Insert the number to find in the List
+            Console.Write("\nWrite the number to be found in the List: -> ");
+            int findNbr = Convert.ToInt32(Console.ReadLine());
+
+            // Returns the number of ocurrencies in the List
+            return findNumber(findNbr);
+
+        }
+
+
+        /// <summary>
+        /// Finds the number of ocurrencies of a number in the List
+        /// Overload 2 - One Integer Parameter
+        /// </summary>
+        /// <param name="p_findNumber">Number to find in the List</param>
+        /// <returns>The number of ocurrencies in the List</returns>
+        static int findNumber(int p_findNumber)
+        {
+
+            // Uses the function FindAll and return the number of ocurrencies of the number
+            List<int> auxList = valuesList.FindAll(x => x == p_findNumber);
+            int auxInt = auxList.Count();
+
+            Console.WriteLine("\n The number {0} has {1} ocurrencies in the List\n", p_findNumber, auxInt);
+
+            // Returns the number of ocurrencies in the List
+            return auxInt;
+        }
+
     }
 }
