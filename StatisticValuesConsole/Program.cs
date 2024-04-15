@@ -35,6 +35,7 @@ namespace StatisticValuesConsoleWin
                 Console.WriteLine("4 - Clear List");
                 Console.WriteLine("5 - Order List Ascending");
                 Console.WriteLine("6 - Order List Descending");
+                Console.WriteLine("7 - Remove a number");
                 Console.WriteLine("99 - Exit");
                 Console.Write("---> ");
 
@@ -75,6 +76,11 @@ namespace StatisticValuesConsoleWin
                         case 6:
                             // Order the List
                             orderList("descending");
+                            break;
+
+                        case 7:
+                            // Remove a number
+                            removeNumber();
                             break;
 
                         case 99:
@@ -183,6 +189,33 @@ namespace StatisticValuesConsoleWin
             }
 
             Console.WriteLine("\nThe List was ordered by {0}\n", typeOrder);
+            showNumbers();
+
+        }
+
+        /// <summary>
+        /// This function removes a number from the List
+        /// </summary>
+        static void removeNumber()
+        {
+            
+            // Asks for the number to be removed
+            Console.Write("\nWrite the number to be removed from List: -> ");
+            int removeNbr = Convert.ToInt32(Console.ReadLine());
+
+            // Several ocurrencies of the number???
+
+            // NOTE: the instruction list.Remove removes only one ocurrency of the number
+            // For removing all the ocurrencies, should use RemoveAll
+            if (valuesList.Remove(removeNbr))
+            {
+                Console.WriteLine("\nThe element {0} was removed\n", removeNbr);
+            }
+            else
+            {
+                Console.WriteLine("\nThe element {0} was not found in the List\n", removeNbr);
+            }
+
             showNumbers();
 
         }
