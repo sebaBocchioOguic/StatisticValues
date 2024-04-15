@@ -33,6 +33,7 @@ namespace StatisticValuesConsoleWin
                 Console.WriteLine("2 - View the complete numbers set");
                 Console.WriteLine("3 - Randomize numbers");
                 Console.WriteLine("4 - Clear List");
+                Console.WriteLine("5 - Order List by asc");
                 Console.WriteLine("9 - Exit");
                 Console.Write("---> ");
 
@@ -63,6 +64,11 @@ namespace StatisticValuesConsoleWin
                         case 4:
                             // Clear the List
                             clearList();
+                            break;
+
+                        case 5:
+                            // Order the List
+                            orderList();
                             break;
 
                         case 9:
@@ -153,6 +159,16 @@ namespace StatisticValuesConsoleWin
         {
             valuesList.Clear();
             Console.WriteLine("\nThe List is empty\n");
+        }
+
+        /// <summary>
+        /// Order the List ascending
+        /// </summary>
+        static void orderList()
+        {
+            valuesList.Sort();
+            Console.WriteLine("\nThe List was ordered\n");
+            showNumbers();
         }
     
     }
