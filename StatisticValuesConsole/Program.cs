@@ -33,8 +33,9 @@ namespace StatisticValuesConsoleWin
                 Console.WriteLine("2 - View the complete numbers set");
                 Console.WriteLine("3 - Randomize numbers");
                 Console.WriteLine("4 - Clear List");
-                Console.WriteLine("5 - Order List by asc");
-                Console.WriteLine("9 - Exit");
+                Console.WriteLine("5 - Order List Ascending");
+                Console.WriteLine("6 - Order List Descending");
+                Console.WriteLine("99 - Exit");
                 Console.Write("---> ");
 
 
@@ -68,12 +69,17 @@ namespace StatisticValuesConsoleWin
 
                         case 5:
                             // Order the List
-                            orderList();
+                            orderList("ascending");
                             break;
 
-                        case 9:
+                        case 6:
+                            // Order the List
+                            orderList("descending");
+                            break;
+
+                        case 99:
                             // Exit the program
-                            throw new Exception("Ending program");
+                            throw new Exception("Ending program by user");
 
                         default:
                             // Invalid options generates an Exception
@@ -92,7 +98,7 @@ namespace StatisticValuesConsoleWin
                 }
 
 
-            } while (menuOption >= 1 && menuOption <= 9);
+            } while (menuOption >= 1 && menuOption <= 99);
 
 
         }
@@ -162,13 +168,23 @@ namespace StatisticValuesConsoleWin
         }
 
         /// <summary>
-        /// Order the List ascending
+        /// Order the List by Ascending or Descending Sort
         /// </summary>
-        static void orderList()
+        /// <param name="typeOrder">It defines 'Ascending' or 'Descending' sort</param>
+        static void orderList(string typeOrder)
         {
+            // Order the list by deafult
             valuesList.Sort();
-            Console.WriteLine("\nThe List was ordered\n");
+
+            // If param is Descending, it reverses the default (Ascending)
+            if (typeOrder == "descending")
+            {
+                valuesList.Reverse();
+            }
+
+            Console.WriteLine("\nThe List was ordered by {0}\n", typeOrder);
             showNumbers();
+
         }
     
     }
