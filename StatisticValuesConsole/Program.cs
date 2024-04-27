@@ -12,6 +12,8 @@ namespace StatisticValuesConsoleWin
         // Initialize List of Int Values (Global)
         static List<int> valuesList = new List<int>();
 
+        // Initialize static functions class from AtomicFunctions Namespace
+        static AtomicFunctions.Functions functions = new AtomicFunctions.Functions();
 
         /// <summary>
         /// Original Console Code for the core of the solution
@@ -20,7 +22,7 @@ namespace StatisticValuesConsoleWin
         static void Main(string[] args)
         {
 
-
+            
 
             // Initialize Byte Variable for Menu Index
             byte menuOption = 1;
@@ -28,7 +30,8 @@ namespace StatisticValuesConsoleWin
             do
             {
                 // Menu Description in Console
-                Console.WriteLine("\nMENU");
+                Console.Clear();
+                Console.WriteLine("MENU");
                 Console.WriteLine("1 - Add a new number");
                 Console.WriteLine("2 - View the complete numbers set");
                 Console.WriteLine("3 - Randomize numbers");
@@ -52,47 +55,64 @@ namespace StatisticValuesConsoleWin
                     {
                         case 1:
                             // Add a new value to the List
-                            addNumber();
+                            Console.Write("\nInsert the new value: -> ");
+                            int newValue = Convert.ToInt32(Console.ReadLine());
+
+                            if (!(functions.addNumber(valuesList, newValue)))
+                            {
+                                throw new Exception("There was an error adding the number to the list!");
+                            }
+
+                            Console.WriteLine("\nNew value inserted: {0}", newValue);
+                            Console.ReadKey();
                             break;
 
                         case 2:
                             // Show the content of the List
-                            showNumbers();
+                            Console.Write("\nNumbers List: " + functions.showNumbers(valuesList));
+                            Console.ReadKey();
                             break;
 
                         case 3:
                             // Randomize numbers to add to the List
                             randomizeNumbers();
+                            Console.ReadKey();
                             break;
 
                         case 4:
                             // Clear the List
                             clearList();
+                            Console.ReadKey();
                             break;
 
                         case 5:
                             // Order the List
                             orderList("ascending");
+                            Console.ReadKey();
                             break;
 
                         case 6:
                             // Order the List
                             orderList("descending");
+                            Console.ReadKey();
                             break;
 
                         case 7:
                             // Remove a number one time
                             removeNumberOneTime();
+                            Console.ReadKey();
                             break;
 
                         case 8:
                             // Remove a number one time
                             removeNumberAll();
+                            Console.ReadKey();
                             break;
 
                         case 9:
                             // Find a number in the List
                             findNumber();
+                            Console.ReadKey();
                             break;
 
                         case 99:
@@ -121,37 +141,6 @@ namespace StatisticValuesConsoleWin
 
         }
 
-        /// <summary>
-        /// Add a new number to the List
-        /// </summary>
-        static void addNumber()
-        {
-            Console.Write("\nInsert the new value: -> ");
-            int newValue = Convert.ToInt32(Console.ReadLine());
-            valuesList.Add(newValue);
-            Console.WriteLine($"New value {newValue} added\n");
-        }
-
-        /// <summary>
-        /// Show the content of the List
-        /// </summary>
-        static void showNumbers()
-        {
-            if (valuesList.Count >= 1)
-            {
-                Console.Write("\nNumbers List: ");
-                foreach (int number in valuesList)
-                {
-                    Console.Write(number + " ");
-                }
-                Console.WriteLine("\n");
-            }
-            else
-            {
-                Console.WriteLine("\nThe List is empty\n");
-            }
-
-        }
 
 
         /// <summary>
@@ -163,7 +152,7 @@ namespace StatisticValuesConsoleWin
             Random rand = new Random();
 
             // Insert the quantity of random values to add
-            Console.Write("\nInsert the quantity of random values to add: -> ");
+            Console.Write("\nEnter the amount of random values to add: -> ");
             int qRand = Convert.ToInt32(Console.ReadLine());
 
             // For loop to add the random values into the List
@@ -173,7 +162,7 @@ namespace StatisticValuesConsoleWin
             }
 
             // Shows the upgraded List
-            showNumbers();
+            functions.showNumbers(valuesList);
         }
 
         /// <summary>
@@ -191,17 +180,17 @@ namespace StatisticValuesConsoleWin
         /// <param name="typeOrder">It defines 'Ascending' or 'Descending' sort</param>
         static void orderList(string typeOrder)
         {
-            // Order the list by deafult
+            // Order the list Ascending by default
             valuesList.Sort();
 
-            // If param is Descending, it reverses the default (Ascending)
+            // If param is Descending, it reverses the default
             if (typeOrder == "descending")
             {
                 valuesList.Reverse();
             }
 
             Console.WriteLine("\nThe List was ordered by {0}\n", typeOrder);
-            showNumbers();
+            functions.showNumbers(valuesList);
 
         }
 
@@ -224,7 +213,7 @@ namespace StatisticValuesConsoleWin
                 Console.WriteLine("\nThe element {0} was not found in the List\n", removeNbr);
             }
 
-            showNumbers();
+            functions.showNumbers(valuesList);
 
         }
 
@@ -232,7 +221,7 @@ namespace StatisticValuesConsoleWin
 
 
         /// <summary>
-        /// This function removes a number from the List, only one ocurrency of the number
+        /// This function removes a number from the List in all its occurrencies
         /// </summary>
         static void removeNumberAll()
         {
@@ -245,8 +234,8 @@ namespace StatisticValuesConsoleWin
             int auxRemove = valuesList.RemoveAll(x => x == removeNbr);
             
             Console.WriteLine("\nThe element {0} was removed in {1} ocurrencies\n", removeNbr, auxRemove);
-            
-            showNumbers();
+
+            functions.showNumbers(valuesList);
 
         }
 

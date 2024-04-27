@@ -5,7 +5,12 @@
       "ProjectGuid": "19f9a4aa-b92f-4d62-8156-7c5af80322ef",
       "DisplayName": "StatisticValuesConsoleWin",
       "ColorIndex": 0
+    },
+    "cee50da2-5836-4982-8ecc-994898a6e30a": {
+      "ProjectGuid": "cee50da2-5836-4982-8ecc-994898a6e30a",
+      "DisplayName": "AtomicFunctions",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

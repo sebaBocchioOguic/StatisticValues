@@ -6,3 +6,6 @@ D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesC
 D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.csproj.CoreCompileInputs.cache
 D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.exe
 D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.pdb
+D:\DevProjects\StatisticValues\StatisticValuesConsole\bin\Debug\AtomicFunctions.dll
+D:\DevProjects\StatisticValues\StatisticValuesConsole\bin\Debug\AtomicFunctions.pdb
+D:\DevProjects\StatisticValues\StatisticValuesConsole\obj\Debug\StatisticValuesConsoleWin.csproj.CopyComplete

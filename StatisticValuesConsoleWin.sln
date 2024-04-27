@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticValuesConsoleWin", "StatisticValuesConsole\StatisticValuesConsoleWin.csproj", "{19F9A4AA-B92F-4D62-8156-7C5AF80322EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomicFunctions", "AtomicFunctions\AtomicFunctions.csproj", "{CEE50DA2-5836-4982-8ECC-994898A6E30A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{19F9A4AA-B92F-4D62-8156-7C5AF80322EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F9A4AA-B92F-4D62-8156-7C5AF80322EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F9A4AA-B92F-4D62-8156-7C5AF80322EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE50DA2-5836-4982-8ECC-994898A6E30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE50DA2-5836-4982-8ECC-994898A6E30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE50DA2-5836-4982-8ECC-994898A6E30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE50DA2-5836-4982-8ECC-994898A6E30A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

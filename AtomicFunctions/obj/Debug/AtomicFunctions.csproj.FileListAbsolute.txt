@@ -1,0 +1,6 @@
+D:\DevProjects\StatisticValues\AtomicFunctions\bin\Debug\AtomicFunctions.dll
+D:\DevProjects\StatisticValues\AtomicFunctions\bin\Debug\AtomicFunctions.pdb
+D:\DevProjects\StatisticValues\AtomicFunctions\obj\Debug\AtomicFunctions.csproj.AssemblyReference.cache
+D:\DevProjects\StatisticValues\AtomicFunctions\obj\Debug\AtomicFunctions.csproj.CoreCompileInputs.cache
+D:\DevProjects\StatisticValues\AtomicFunctions\obj\Debug\AtomicFunctions.dll
+D:\DevProjects\StatisticValues\AtomicFunctions\obj\Debug\AtomicFunctions.pdb
