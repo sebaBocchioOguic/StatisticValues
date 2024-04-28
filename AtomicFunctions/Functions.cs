@@ -29,24 +29,41 @@ namespace AtomicFunctions
         /// Show the content of the List
         /// </summary>
         /// <param name="valuesList">The List of numbers to be shown</param>
-        /// <returns>String with all numbers concatenated</returns>
-        public string showNumbers(List<int> valuesList)
+        /// <returns>Returns the List of Numbers to be shown in the Front</returns>
+        public List<int> showNumbers(List<int> valuesList)
         {
-            string result = "";
-            if (valuesList.Count >= 1)
+
+            return valuesList;
+
+        }
+
+        /// <summary>
+        /// Randomize Numbers to add to the List
+        /// </summary>
+        /// <param name="qRand">Amount of numbers to be added with Random function</param>
+        /// <param name="minValue">Minimum value of Random. Default 0</param>
+        /// <param name="maxValue">Maximum value of Random. Default 100.000</param>
+        public void randomizeNumbers(List<int> valuesList, int qRand, int minValue = 0, int maxValue = 100000)
+        {
+            // Initialize Random Object
+            Random rand = new Random();
+
+            // For loop to add the random values into the List
+            for (int i = 0; i <= qRand; i++)
             {
-                foreach (int number in valuesList)
-                {
-                    result += " " + number;
-                }
-            }
-            else
-            {
-                result = "The List is empty";
+                valuesList.Add(rand.Next(minValue, maxValue));
             }
 
-            return result;
+        }
 
+
+        /// <summary>
+        /// Clear the List of values
+        /// </summary>
+        /// <param name="valuesList">The List to be Cleaned</param>
+        public void clearList(List<int> valuesList)
+        {
+            valuesList.Clear();
         }
 
     }

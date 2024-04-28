@@ -64,55 +64,66 @@ namespace StatisticValuesConsoleWin
                             }
 
                             Console.WriteLine("\nNew value inserted: {0}", newValue);
-                            Console.ReadKey();
+                            pause();
                             break;
 
                         case 2:
-                            // Show the content of the List
-                            Console.Write("\nNumbers List: " + functions.showNumbers(valuesList));
-                            Console.ReadKey();
+                            // Show the content of the List in Console
+                            showNumbers();
+                            pause();
                             break;
 
                         case 3:
                             // Randomize numbers to add to the List
-                            randomizeNumbers();
-                            Console.ReadKey();
+                            Console.Write("\nEnter the amount of random values to add: -> ");
+                            int qRand = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("\nEnter the minimum value of random (<enter> for default 0): -> ");
+                            int minRand = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("\nEnter the maximum value of random (<enter> for default 100.000): -> ");
+                            int maxRand = Convert.ToInt32(Console.ReadLine());
+
+                            functions.randomizeNumbers(valuesList, qRand, minRand, maxRand);
+                            pause();
                             break;
 
                         case 4:
                             // Clear the List
-                            clearList();
-                            Console.ReadKey();
+                            functions.clearList(valuesList);
+                            pause();
                             break;
+
+
+
+//  ------------------ DE AQUI PARA ABAJO, PASAR A FUNCTIONS.cs
 
                         case 5:
                             // Order the List
                             orderList("ascending");
-                            Console.ReadKey();
+                            pause();
                             break;
 
                         case 6:
                             // Order the List
                             orderList("descending");
-                            Console.ReadKey();
+                            pause();
                             break;
 
                         case 7:
                             // Remove a number one time
                             removeNumberOneTime();
-                            Console.ReadKey();
+                            pause();
                             break;
 
                         case 8:
                             // Remove a number one time
                             removeNumberAll();
-                            Console.ReadKey();
+                            pause();
                             break;
 
                         case 9:
                             // Find a number in the List
                             findNumber();
-                            Console.ReadKey();
+                            pause();
                             break;
 
                         case 99:
@@ -141,38 +152,35 @@ namespace StatisticValuesConsoleWin
 
         }
 
-
-
         /// <summary>
-        /// Randomize Numbers to add to the List
+        /// Show Numbers in the List in Console Mode
         /// </summary>
-        static void randomizeNumbers()
+        static void showNumbers()
         {
-            // Initialize Random Object
-            Random rand = new Random();
 
-            // Insert the quantity of random values to add
-            Console.Write("\nEnter the amount of random values to add: -> ");
-            int qRand = Convert.ToInt32(Console.ReadLine());
+            List<int> auxShowNumbers = functions.showNumbers(valuesList);
 
-            // For loop to add the random values into the List
-            for (int i = 0; i < qRand; i++)
+            string result = "";
+            int i = 0;
+            if (auxShowNumbers.Count >= 1)
             {
-                valuesList.Add(rand.Next(0,500));
+                foreach (int number in auxShowNumbers)
+                {
+                    result += " " + number;
+                    i++;
+                    if(i < auxShowNumbers.Count)
+                    {
+                        result += ",";
+                    }
+                }
             }
-
-            // Shows the upgraded List
-            functions.showNumbers(valuesList);
+            else
+            {
+                result = "The List is empty";
+            }
+            Console.WriteLine("Numbers in the List: " + result);
         }
 
-        /// <summary>
-        /// Clear the List of values
-        /// </summary>
-        static void clearList()
-        {
-            valuesList.Clear();
-            Console.WriteLine("\nThe List is empty\n");
-        }
 
         /// <summary>
         /// Order the List by Ascending or Descending Sort
@@ -279,5 +287,13 @@ namespace StatisticValuesConsoleWin
             return auxInt;
         }
 
+        /// <summary>
+        /// Static function to display a message in screen to press any key and wait for it
+        /// </summary>
+        static void pause()
+        {
+            Console.WriteLine("\nPress any key to return to main menu");
+            Console.ReadKey();
+        }
     }
 }
