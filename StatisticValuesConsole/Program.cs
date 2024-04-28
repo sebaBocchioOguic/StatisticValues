@@ -120,7 +120,11 @@ namespace StatisticValuesConsoleWin
 
                         case 99:
                             // Exit the program
-                            throw new Exception("Ending program by user");
+                            Console.WriteLine("Ending program by user");
+                            menuOption = 255;
+                            pause();
+                            break;
+                            
 
                         default:
                             // Invalid options generates an Exception
