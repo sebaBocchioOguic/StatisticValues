@@ -77,9 +77,9 @@ namespace StatisticValuesConsoleWin
                             // Randomize numbers to add to the List
                             Console.Write("\nEnter the amount of random values to add: -> ");
                             int qRand = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("\nEnter the minimum value of random (<enter> for default 0): -> ");
+                            Console.Write("\nEnter the minimum value of random: -> ");
                             int minRand = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("\nEnter the maximum value of random (<enter> for default 100.000): -> ");
+                            Console.Write("\nEnter the maximum value of random: -> ");
                             int maxRand = Convert.ToInt32(Console.ReadLine());
 
                             functions.randomizeNumbers(valuesList, qRand, minRand, maxRand);
