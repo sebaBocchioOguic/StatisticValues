@@ -55,15 +55,7 @@ namespace StatisticValuesConsoleWin
                     {
                         case 1:
                             // Add a new value to the List
-                            Console.Write("\nInsert the new value: -> ");
-                            int newValue = Convert.ToInt32(Console.ReadLine());
-
-                            if (!(functions.addNumber(valuesList, newValue)))
-                            {
-                                throw new Exception("There was an error adding the number to the list!");
-                            }
-
-                            Console.WriteLine("\nNew value inserted: {0}", newValue);
+                            addNumber();
                             pause();
                             break;
 
@@ -139,10 +131,17 @@ namespace StatisticValuesConsoleWin
                 catch (Exception e)
                 {
 
-                    // Shows the error message and finishes the program
-                    Console.WriteLine("\n" + e.Message + "\nPress any key to exit program");
-                    Console.ReadKey();
-                    break;
+                    if (e is System.FormatException)
+                    {
+                        Console.WriteLine("The input format is invalid. Please try again and enter an integer number");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unknown Error. Please try again or exit program");
+                    }
+
+                    pause();
 
                 }
 
@@ -153,7 +152,25 @@ namespace StatisticValuesConsoleWin
         }
 
         /// <summary>
-        /// Show Numbers in the List in Console Mode
+        /// Add a new number to the list from the Console
+        /// </summary>
+        /// <exception cref="Exception"></exception>
+        static void addNumber() {
+            Console.Write("\nInsert the new value to add: -> ");
+            int newValue = Convert.ToInt32(Console.ReadLine());
+
+            if (!(functions.addNumber(valuesList, newValue)))
+            {
+                throw new Exception("There was an error adding the number to the list!");
+            }
+
+            Console.WriteLine("\nNew value inserted: {0}", newValue);
+        }
+
+    
+
+        /// <summary>
+        /// Show Numbers in the List from the Console
         /// </summary>
         static void showNumbers()
         {
