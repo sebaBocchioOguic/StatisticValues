@@ -49,7 +49,7 @@ namespace AtomicFunctions
             Random rand = new Random();
 
             // For loop to add the random values into the List
-            for (int i = 0; i <= qRand; i++)
+            for (int i = 1; i <= qRand; i++)
             {
                 valuesList.Add(rand.Next(minValue, maxValue));
             }
@@ -64,6 +64,26 @@ namespace AtomicFunctions
         public void clearList(List<int> valuesList)
         {
             valuesList.Clear();
+        }
+
+
+
+        /// <summary>
+        /// Order the List by Ascending or Descending Sort
+        /// </summary>
+        /// <param name="valuesList">The List to be ordered</param>
+        /// <param name="typeOrder">It defines 'Ascending' or 'Descending' sort</param>
+        public void orderList(List<int> valuesList, string typeOrder)
+        {
+            // Order the list Ascending by default
+            valuesList.Sort();
+
+            // If param is Descending, it reverses the default
+            if (typeOrder == "descending")
+            {
+                valuesList.Reverse();
+            }
+
         }
 
     }

@@ -83,13 +83,13 @@ namespace StatisticValuesConsoleWin
 
                         case 5:
                             // Order the List
-                            orderList("ascending");
+                            orderListConsole("ascending");
                             pause();
                             break;
 
                         case 6:
                             // Order the List
-                            orderList("descending");
+                            orderListConsole("descending");
                             pause();
                             break;
 
@@ -158,7 +158,7 @@ namespace StatisticValuesConsoleWin
 
             if (!(functions.addNumber(valuesList, newValue)))
             {
-                throw new Exception("There was an error adding the number to the list!");
+                throw new Exception("\nThere was an error adding the number to the list!");
             }
 
             Console.WriteLine("\nNew value inserted: {0}", newValue);
@@ -190,9 +190,9 @@ namespace StatisticValuesConsoleWin
             }
             else
             {
-                result = "The List is empty";
+                result = "\nThe List is empty";
             }
-            Console.WriteLine("Numbers in the List: " + result);
+            Console.WriteLine("\nNumbers in the List: " + result);
         }
 
         /// <summary>
@@ -218,21 +218,18 @@ namespace StatisticValuesConsoleWin
         /// Order the List by Ascending or Descending Sort
         /// </summary>
         /// <param name="typeOrder">It defines 'Ascending' or 'Descending' sort</param>
-        static void orderList(string typeOrder)
+        static void orderListConsole(string typeOrder)
         {
-            // Order the list Ascending by default
-            valuesList.Sort();
 
-            // If param is Descending, it reverses the default
-            if (typeOrder == "descending")
-            {
-                valuesList.Reverse();
-            }
+            functions.orderList(valuesList, typeOrder);
 
-            Console.WriteLine("\nThe List was ordered by {0}\n", typeOrder);
+            Console.WriteLine("\nThe List was ordered by {0}", typeOrder);
             functions.showNumbers(valuesList);
 
         }
+
+
+
 
         /// <summary>
         /// This function removes a number from the List, only one ocurrency of the number
