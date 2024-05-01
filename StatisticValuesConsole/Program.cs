@@ -96,7 +96,7 @@ namespace StatisticValuesConsoleWin
 
                         case 9:
                             // Find a number in the List
-                            findNumber();
+                            findNumberConsole();
                             break;
 
                         case 99:
@@ -270,37 +270,22 @@ namespace StatisticValuesConsoleWin
         /// Overload 1 - Without parameters
         /// </summary>
         /// <returns>The number of ocurrencies in the List</returns>
-        static int findNumber()
+        static void findNumberConsole()
         {
 
             // Insert the number to find in the List
             Console.Write("\nWrite the number to be found in the List: -> ");
             int findNbr = Convert.ToInt32(Console.ReadLine());
 
-            // Returns the number of ocurrencies in the List
-            return findNumber(findNbr);
+            int amountNbr = functions.findNumber(valuesList, findNbr);
+
+            Console.WriteLine("\nThe number {0} has {1} ocurrencies in the List\n", findNbr, amountNbr);
 
         }
 
 
-        /// <summary>
-        /// Finds the number of ocurrencies of a number in the List
-        /// Overload 2 - One Integer Parameter
-        /// </summary>
-        /// <param name="p_findNumber">Number to find in the List</param>
-        /// <returns>The number of ocurrencies in the List</returns>
-        static int findNumber(int p_findNumber)
-        {
 
-            // Uses the function FindAll and return the number of ocurrencies of the number
-            List<int> auxList = valuesList.FindAll(x => x == p_findNumber);
-            int auxInt = auxList.Count();
 
-            Console.WriteLine("\nThe number {0} has {1} ocurrencies in the List\n", p_findNumber, auxInt);
-
-            // Returns the number of ocurrencies in the List
-            return auxInt;
-        }
 
         /// <summary>
         /// Static function to display a message in screen to press any key and wait for it

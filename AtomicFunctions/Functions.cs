@@ -106,12 +106,33 @@ namespace AtomicFunctions
         /// <summary>
         /// This function removes a number from the List in all its occurrencies
         /// </summary>
+        /// <param name="valuesList">The original List to find and remove a number</param>
+        /// <param name="removeNbr">The number to be removed</param>
         public int removeNumberAll(List<int> valuesList, int removeNbr)
         {
 
             // Removes the number in all the ocurrencies and returns an integer number of removed positions
             return valuesList.RemoveAll(x => x == removeNbr);
    
+        }
+
+
+
+        /// <summary>
+        /// Finds the number of ocurrencies of a number in the List
+        /// Overload 2 - One Integer Parameter
+        /// </summary>
+        /// <param name="valuesList">The List in which find the number</param>
+        /// <param name="p_findNumber">Number to find in the List</param>
+        /// <returns>The number of ocurrencies in the List</returns>
+        public int findNumber(List<int> valuesList, int p_findNumber)
+        {
+
+            // Uses the function FindAll and return the number of ocurrencies of the number
+            List<int> auxList = valuesList.FindAll(x => x == p_findNumber);
+
+            // Returns the number of ocurrencies in the List
+            return auxList.Count();
         }
 
     }
