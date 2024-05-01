@@ -55,26 +55,19 @@ namespace StatisticValuesConsoleWin
                     {
                         case 1:
                             // Add a new value to the List
-                            addNumber();
+                            addNumberConsole();
                             pause();
                             break;
 
                         case 2:
                             // Show the content of the List in Console
-                            showNumbers();
+                            showNumbersConsole();
                             pause();
                             break;
 
                         case 3:
                             // Randomize numbers to add to the List
-                            Console.Write("\nEnter the amount of random values to add: -> ");
-                            int qRand = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("\nEnter the minimum value of random: -> ");
-                            int minRand = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("\nEnter the maximum value of random: -> ");
-                            int maxRand = Convert.ToInt32(Console.ReadLine());
-
-                            functions.randomizeNumbers(valuesList, qRand, minRand, maxRand);
+                            randomizeValuesConsole();
                             pause();
                             break;
 
@@ -159,7 +152,7 @@ namespace StatisticValuesConsoleWin
         /// Add a new number to the list from the Console
         /// </summary>
         /// <exception cref="Exception"></exception>
-        static void addNumber() {
+        static void addNumberConsole() {
             Console.Write("\nInsert the new value to add: -> ");
             int newValue = Convert.ToInt32(Console.ReadLine());
 
@@ -176,7 +169,7 @@ namespace StatisticValuesConsoleWin
         /// <summary>
         /// Show Numbers in the List from the Console
         /// </summary>
-        static void showNumbers()
+        static void showNumbersConsole()
         {
 
             List<int> auxShowNumbers = functions.showNumbers(valuesList);
@@ -200,6 +193,24 @@ namespace StatisticValuesConsoleWin
                 result = "The List is empty";
             }
             Console.WriteLine("Numbers in the List: " + result);
+        }
+
+        /// <summary>
+        /// Randomize values from Console to add to the list
+        /// </summary>
+        static void randomizeValuesConsole()
+        {
+
+            Console.Write("\nEnter the amount of random values to add: -> ");
+            int qRand = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter the minimum integer value to randomize: -> ");
+            int minRand = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter the maximum integer value to randomize: -> ");
+            int maxRand = Convert.ToInt32(Console.ReadLine());
+
+            functions.randomizeNumbers(valuesList, qRand, minRand, maxRand);
+
+            Console.WriteLine("\nSuccesfully randomize {0} values between {1} and {2}", qRand, minRand, maxRand);
         }
 
 
