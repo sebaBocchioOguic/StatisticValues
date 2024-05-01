@@ -86,5 +86,33 @@ namespace AtomicFunctions
 
         }
 
+
+
+        /// <summary>
+        /// This function removes a number from the List, only one ocurrency of the number
+        /// </summary>
+        /// <param name="valuesList">The List where the number must be removed once</param>
+        /// <param name="removeNbr">The number to be removed</param>
+        /// <returns>True or False</returns>
+        public bool removeNumberOnce(List<int> valuesList, int removeNbr)
+        {
+
+            return (valuesList.Remove(removeNbr));
+
+        }
+
+
+
+        /// <summary>
+        /// This function removes a number from the List in all its occurrencies
+        /// </summary>
+        public int removeNumberAll(List<int> valuesList, int removeNbr)
+        {
+
+            // Removes the number in all the ocurrencies and returns an integer number of removed positions
+            return valuesList.RemoveAll(x => x == removeNbr);
+   
+        }
+
     }
 }

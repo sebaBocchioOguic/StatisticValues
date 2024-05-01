@@ -77,10 +77,6 @@ namespace StatisticValuesConsoleWin
                             pause();
                             break;
 
-
-
-//  ------------------ DE AQUI PARA ABAJO, PASAR A FUNCTIONS.cs
-
                         case 5:
                             // Order the List
                             orderListConsole("ascending");
@@ -94,14 +90,14 @@ namespace StatisticValuesConsoleWin
                             break;
 
                         case 7:
-                            // Remove a number one time
-                            removeNumberOneTime();
+                            // Remove a number - Only one occurrency
+                            removeNumberOnceConsole();
                             pause();
                             break;
 
                         case 8:
-                            // Remove a number one time
-                            removeNumberAll();
+                            // Remove a number - All occurrencies
+                            removeNumberAllConsole();
                             pause();
                             break;
 
@@ -234,16 +230,16 @@ namespace StatisticValuesConsoleWin
         /// <summary>
         /// This function removes a number from the List, only one ocurrency of the number
         /// </summary>
-        static void removeNumberOneTime()
+        static void removeNumberOnceConsole()
         {
             
             // Asks for the number to be removed
             Console.Write("\nWrite the number to be removed from List: -> ");
             int removeNbr = Convert.ToInt32(Console.ReadLine());
 
-            if (valuesList.Remove(removeNbr))
+            if (functions.removeNumberOnce(valuesList, removeNbr))
             {
-                Console.WriteLine("\nThe element {0} was removed\n", removeNbr);
+                Console.WriteLine("\nThe element {0} was removed once", removeNbr);
             }
             else
             {
@@ -260,7 +256,7 @@ namespace StatisticValuesConsoleWin
         /// <summary>
         /// This function removes a number from the List in all its occurrencies
         /// </summary>
-        static void removeNumberAll()
+        static void removeNumberAllConsole()
         {
 
             // Asks for the number to be removed
@@ -268,7 +264,7 @@ namespace StatisticValuesConsoleWin
             int removeNbr = Convert.ToInt32(Console.ReadLine());
 
             // Removes the number in all the ocurrencies and returns an integer number of removed positions
-            int auxRemove = valuesList.RemoveAll(x => x == removeNbr);
+            int auxRemove = functions.removeNumberAll(valuesList, removeNbr);
             
             Console.WriteLine("\nThe element {0} was removed in {1} ocurrencies\n", removeNbr, auxRemove);
 
@@ -310,7 +306,7 @@ namespace StatisticValuesConsoleWin
             List<int> auxList = valuesList.FindAll(x => x == p_findNumber);
             int auxInt = auxList.Count();
 
-            Console.WriteLine("\n The number {0} has {1} ocurrencies in the List\n", p_findNumber, auxInt);
+            Console.WriteLine("\nThe number {0} has {1} ocurrencies in the List\n", p_findNumber, auxInt);
 
             // Returns the number of ocurrencies in the List
             return auxInt;
