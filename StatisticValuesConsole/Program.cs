@@ -56,19 +56,16 @@ namespace StatisticValuesConsoleWin
                         case 1:
                             // Add a new value to the List
                             addNumberConsole();
-                            pause();
                             break;
 
                         case 2:
                             // Show the content of the List in Console
                             showNumbersConsole();
-                            pause();
                             break;
 
                         case 3:
                             // Randomize numbers to add to the List
                             randomizeValuesConsole();
-                            pause();
                             break;
 
                         case 4:
@@ -80,38 +77,32 @@ namespace StatisticValuesConsoleWin
                         case 5:
                             // Order the List
                             orderListConsole("ascending");
-                            pause();
                             break;
 
                         case 6:
                             // Order the List
                             orderListConsole("descending");
-                            pause();
                             break;
 
                         case 7:
                             // Remove a number - Only one occurrency
                             removeNumberOnceConsole();
-                            pause();
                             break;
 
                         case 8:
                             // Remove a number - All occurrencies
                             removeNumberAllConsole();
-                            pause();
                             break;
 
                         case 9:
                             // Find a number in the List
                             findNumber();
-                            pause();
                             break;
 
                         case 99:
                             // Exit the program
                             Console.WriteLine("Ending program by user");
                             menuOption = 255;
-                            pause();
                             break;
                             
 
@@ -134,10 +125,9 @@ namespace StatisticValuesConsoleWin
                         Console.WriteLine("Unknown Error. Please try again or exit program");
                     }
 
-                    pause();
-
                 }
 
+                pause();
 
             } while (menuOption >= 1 && menuOption <= 99);
 
