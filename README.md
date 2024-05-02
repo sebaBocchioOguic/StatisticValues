@@ -1,5 +1,6 @@
 # StatisticsValues
 
+## Objective
 The goal of this project is to build a simple and open-source software that returns all statistics values given a dinamic set of numbers.
 
 Statistics values are used to summarize data sets and understand their characteristics. Here are some of the most common ones:
@@ -15,4 +16,6 @@ Standard deviation: The square root of the variance. It's measured in the same u
 Percentiles: These divide the data into 100 equal parts. For example, the 25th percentile is the value below which 25% of the data falls.
 Quartiles: There are three quartiles, dividing the data into four equal parts. The first quartile (Q1) is the same as the 25th percentile, and the third quartile (Q3) is the same as the 75th percentile. The interquartile range (IQR) is the difference between Q3 and Q1 and represents the middle 50% of the data.
 
-
+## v.0.0.1
+- Initial Main Console Menu within program.cs
+- Initial AtomicFunctions dll including functions needed for future statistical calculations
